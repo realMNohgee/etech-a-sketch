@@ -20,3 +20,11 @@ function makeRows (numberOf) {
 
 // Create columns //
 
+function createColumns(numberOfCells) {
+    for (i = 0; i < rows.length; i++) {
+        for (j = 0; j < numberOfCells; j++) {
+            let newCells = document.createElement('div');
+            rows[j].appendChild(newCells).className = 'cell';
+        };
+    };
+};
