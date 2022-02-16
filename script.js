@@ -8,23 +8,28 @@ let cells = document.getElementsByClassName('cell');
 
 function getGrid() {
     makeRows (16);
-    makeColumns(16);
+    createColumns(16);
 }
 
 function makeRows (numberOf) {
     for (r = 0; r < numberOf; r++){
-        let row = document.createElement('div');
-        container.appendChild(row).className = 'gridRows';
-    };
-};
+        let newRows = document.createElement('div');
+        document.body.appendChild(newRows).className = 'gridRows';
+     
+    }
+}
 
-// Create columns //
+// Create columns //)
 
 function createColumns(numberOfCells) {
     for (i = 0; i < rows.length; i++) {
         for (j = 0; j < numberOfCells; j++) {
             let newCells = document.createElement('div');
             rows[j].appendChild(newCells).className = 'cell';
-        };
-    };
-};
+        }
+    }
+
+
+}
+getGrid();
+
