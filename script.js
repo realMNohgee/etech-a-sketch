@@ -28,8 +28,11 @@ function createColumns(numberOfCells) {
             rows[j].appendChild(newCells).className = 'cell';
         }
     }
+const square = document.querySelector('div');
+square.addEventListener('mouseover', function() {
+    event.target.classList.replace('square', 'color');
+})
 
 
-}
+};
 getGrid();
-
