@@ -1,39 +1,30 @@
-// Setting constants and variables //
+            // Setting constants  //
 
-const container = document.getElementById('container');
-let rows = document.getElementsByClassName('gridRows');
-let cells = document.getElementsByClassName('cell');
+const container = document.querySelector('.container');
+const userInput = document.getElementById('quantity');
+const resetButton = document.querySelector('.reset');
 
-// Create default gird size //
+            // Create Grid  //
 
-function getGrid() {
-    makeRows (64);
-    createColumns(64);
+getGrid = () => {
+    for (let i = 0; i < 256; i++) {
+        const div = document.createElement('div');
+        div.classList.add('square');
+        grid.appendChild(div);
+    }
+    };
+
+inputGrid = () => {
+     grid.innerHTML = "";
+     grid.style.setProperty(
+         'grid-template-cloumns', `repeat(${userInput.value}, 2fr)`
+
+     );
+     grid.style.setProperty(
+         'grid-template-rows', `repeat(${userInput.value}, 2fr)`
+     );
+
+     for (let i = 0; i < userInput.value * userInput.value; i++) {
+         const div = document.createElement('div');
+     }
 }
-
-function makeRows (numberOf) {
-    for (r = 0; r < numberOf; r++){
-        let newRows = document.createElement('div');
-        document.body.appendChild(newRows).className = 'gridRows';
-     
-    }
-}
-
-// Create columns //)
-
-function createColumns(numberOfCells) {
-    for (i = 0; i < rows.length; i++) {
-        for (j = 0; j < numberOfCells; j++) {
-            let newCells = document.createElement('div');
-            rows[j].appendChild(newCells).className = 'cell';
-        }
-    }
-document.getElementById('container')
-    document.addEventListener("mouseenter", mouseEnter);
-
-function mouseEnter() {
-    document.getElementById('container').style.color = "black";
-    }
-}   
-
-getGrid();
