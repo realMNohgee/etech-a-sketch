@@ -7,8 +7,8 @@ let cells = document.getElementsByClassName('cell');
 // Create default gird size //
 
 function getGrid() {
-    makeRows (16);
-    createColumns(16);
+    makeRows (64);
+    createColumns(64);
 }
 
 function makeRows (numberOf) {
@@ -28,11 +28,12 @@ function createColumns(numberOfCells) {
             rows[j].appendChild(newCells).className = 'cell';
         }
     }
-const square = document.querySelector('div');
-square.addEventListener('mouseover', mouseOver) 
-target.classList.replace('square', 'color');
-};
+document.getElementById('container')
+    document.addEventListener("mouseenter", mouseEnter);
 
-
+function mouseEnter() {
+    document.getElementById('container').style.color = "black";
+    }
+}   
 
 getGrid();
