@@ -1,40 +1,44 @@
             // Setting constants  //
 
-const container = document.querySelector('.container');
-const userInput = document.getElementById('quantity');
-const resetButton = document.querySelector('.reset');
+const container = document.querySelector('#container');
+let cell;
+let target;
 
-            // Create Grid  //
+            // Setting Divs //
 
-getGrid = () => {
-    for (let i = 0; i < 256; i++) {
-        const div = document.createElement('div');
-        div.classList.add('square');
-        grid.appendChild(div);
+function makeCell (numCell) {
+    for (let j = 0; j < numCell; j++) {
+        cell = document.createElement('div');
+        cell.classList.add('cell');
+        container.appendChild(cell);
     }
-    };
+} 
 
-inputGrid = () => {
-     grid.innerHTML = "";
-     grid.style.setProperty(
-         'grid-template-cloumns', `repeat(${userInput.value}, 2fr)`
+     //  setting up function to makeGrid //
 
-     );
-     grid.style.setProperty(
-         'grid-template-rows', `repeat(${userInput.value}, 2fr)`
-     );
+function makeGrid (numRow, numCol) {
+    container.style.setProperty('--numRows', numRow);
+    container.style.setProperty('--numCols', numCol);
+    for (let r = 0; r < numRow; r++) {
+        makeCell(numCol);
+    }
+}
 
-     for (let i = 0; i < userInput.value * userInput.value; i++) {
-         const div = document.createElement('div');
-         div.classList.add('square');
-         grid.appendChild(div);
-     }
-     console.log(userInput.value);
-};
+function promptGrid() {
+    let number = prompt("Please select the sixe of your grid! 16-256 only!", 16);
+      if (number >=16 && number <=256) {
+          makeGrid(number,number);
+      }else {
+          do {
+              number = prompt("Invalid selection! Please choose size of 16-256!");
+          }
+          while (number < 16 || number > 256);
+          makeGrid(number,number);
+      }
+}
 
-const square = document.querySelector('div');
-square.addEventListener('mouseover', function(event) {
-    event.target.classList.replace('square', 'color');
-});
+        //  Add the mouseover event //
 
-
+function changeColor (target) {
+    target.style.backgroundColor = 'dark-grey';
+}        
