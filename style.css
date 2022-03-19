@@ -1,34 +1,13 @@
-html {
-  text-align: center;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
+body{
+  background-color: blue;
 }
 
-.right {
-  float: right;
+h1 {
+  display: flex;
+  justify-content: center;
+  color: black;
+  margin: auto;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 60px;
 }
 
-.left {
-  display: inline-block;
-}
-
-.square {
-  background-color: white;
-  border: 1px solid black;
-}
-
-.color {
-  background-color: gray;
-  border: 1px solid black;
-}
-
-.container {
-  margin-top: 30px;
-  margin-right: 30px;
-  display: -ms-inline-grid;
-  grid-template-columns: repeat(16, 2fr);
-  grid-template-rows: repeat(16, 2fr);
-  border: 5px solid black;
-  border-radius: 10px;
-  height: 600px;
-}

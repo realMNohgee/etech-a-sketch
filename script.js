@@ -41,4 +41,21 @@ function promptGrid() {
 
 function changeColor (target) {
     target.style.backgroundColor = 'dark-grey';
-}        
+}
+
+container.addEventListener('mouseover', function(e) {
+    target = e.target;
+
+    if (target.matches('div.cell')) {
+        changeColor(target);
+    }
+});
+
+            // Add RESET button //
+
+const reset = document.querySelector('.resetBtn');
+reset.addEventListener('click', function() {
+    window.location.reload();
+});
+
+promptGrid();
