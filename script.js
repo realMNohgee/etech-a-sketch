@@ -25,14 +25,14 @@ function makeGrid (numRow, numCol) {
 }
 
 function promptGrid() {
-    let number = prompt("Please select the sixe of your grid! 16-256 only!", 16);
-      if (number >=16 && number <=256) {
+    let number = prompt("Please select the size of your grid! 16-60 only!", 16);
+      if (number >=16 && number <=60) {
           makeGrid(number,number);
       }else {
           do {
-              number = prompt("Invalid selection! Please choose size of 16-256!");
+              number = prompt("Invalid selection! Please choose size of 16-60!");
           }
-          while (number < 16 || number > 256);
+          while (number < 16 || number > 60);
           makeGrid(number,number);
       }
 }
@@ -40,7 +40,7 @@ function promptGrid() {
         //  Add the mouseover event //
 
 function changeColor (target) {
-    target.style.backgroundColor = 'dark-grey';
+    target.style.backgroundColor = 'grey';
 }
 
 container.addEventListener('mouseover', function(e) {
